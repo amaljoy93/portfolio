@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+            <div id="header">
+                <div class="container" style=" background-color: #15155d;">
+                  <div>
+                    <nav>
+                        <div style="width:25%;">AMAL JOY </div>
+                        <div style="width: 75%;">
+                          <ul class="meanubar">
+                            <li ><a class="white-text" href="#">Home</a></li>
+                            <li><a class="white-text" href="#">About</a></li>
+                            <li><a class="white-text" href="#">Services</a></li>
+                            <li><a class="white-text" href="#">Portfolio</a></li>
+                            <li><a class="white-text" href="#">Contact</a></li>
+                          </ul>
+                        </div>
+                    </nav>
+
+                  </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <div class="myinfo">I am a  <span></span> </div>
+                  <section class="Experience" id="Experience">
+                    <h5 class="heading">Experience</h5>
+                    <div class="timeline-items">
+                      <div class="timeline-item">
+                          <div class="timeline-dot"></div>
+                              <div class="timeline-date">2021</div>
+                              <div class="timeline-content">
+                                  <h3>Mathematics Tutor</h3>
+                                  <p>Instructed students at various academic levels in mathematics, preparing them for
+                                    exams and future academic endeavours.
+                                    Covered subjects such as linear algebra, calculus, and statistics
+                                  </p>
+                              </div>
+                          
+                      </div>
+                      <div class="timeline-item">
+                          <div class="timeline-dot"></div>
+                              <div class="timeline-date">2019</div>
+                              <div class="timeline-content">
+                                  <h3>Content Specialist</h3>
+                                  <p>Created accurate and timely mathematical problems for an educational app.
+                                    Applied memory techniques and appropriate formulas to efficiently solve aptitude
+                                    problems.
+                                    Proofread quantitative problems.
+                                  </p>
+                              </div>
+                          
+                      </div>
+                      <div class="timeline-item">
+                          <div class="timeline-dot"></div>
+                              <div class="timeline-date">2021</div>
+                              <div class="timeline-content">
+                                  <h3>High School</h3>
+                                  <p>hiu,kjhkuhdshhafsdfhak jkdhj  dkjd
+                                    dkjdhf dnjfh dkjasdfafh dkja djkkja
+                                    dlkjsdfka djgk hkds dlj afjdfjjd dlj
+                                  </p>
+                              </div>
+                          
+                      </div>
+      
+      
+      
+      
+                    </div>
+      
+      
+                </section> 
+
+
+
+
+
+                  <div class="myImage" ></div>
+                      <div>     
+
+                        
+                          <form name="submit-to-google-sheet">
+                          <div>
+                          <label name="Name"> Name</label>
+                          <input name="Name" type="text">
+                          </div><br>
+                
+                          <div>
+                          <label name="Email"> Email </label>
+                          <input name="Email" type="email"/>
+                          </div><br>
+                
+                
+                          <div>
+                          <label>Message</label>
+                          <textarea name="Message"> </textarea>
+                          </div><br>
+                
+                          <input type="submit" name="submit"> 
+                          <span id="success"></span>
+                          
+                          </form>
+                      
+                            <script>
+                              const scriptURL = 'https://script.google.com/macros/s/AKfycbxh9QgeH6NPaJztMNbwnQlIhkKJmH8YNP45hz8AsayWtcPfvr34i8loVcstwqOYoPzd/exec'
+                              const form = document.forms['submit-to-google-sheet']
+                              const success= document.getElementById('success');
+                              form.addEventListener('submit', e => {
+                                e.preventDefault()
+                                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                  .then(response =>{
+                                    success.innerHTML="data successfully submitted";
+                                    setTimeout(function()
+                                    {
+                                      successinnerHTML="";
+                                    },500)
+                                    form.reset();
+                    
+                                  } )
+                                  .catch(error => console.error('Error!', error.message))
+                              })
+                            </script>
+                      
+                                                               
+                      </div>
+                
+
+                        
+                      
+                </div>
+            </div>
+
+</body>
+
+</html>
